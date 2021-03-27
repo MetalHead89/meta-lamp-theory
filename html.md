@@ -965,3 +965,33 @@ Atomic CSS, редко также ACSS — атомарный CSS. В некот
 
 В связи с этими недостатками, подход был встречен существенным объемом критики. Тем не менее, подход может оказаться эффективным для очень больших проектов — кажется, Yahoo! вполне довольны использованием ACSS (ссылка на интересную презентацию того же Тьерри Коблентца).
 Кроме того, атомарный CSS используется в различных фреймворках для задания корректирующих стилей элементов и в некоторых слоях других методологий.
+
+## Как бы отрефакторили данный код
+
+```html
+<header class="header">
+    <img class="logo">
+    <form class="search-form">
+        <input type="input">
+        <button type="button"></button>
+    </form>
+    <ul class="lang-switcher">
+        <li class="lang-item"><a class="lang-link" href="url">en</a> </li>
+        <li class="lang-item"> <a class="lang-link" href="url">ru</a> </li>
+    </ul>
+</header>
+```
+
+```html
+<header class="header">
+    <img class="header__logo">
+    <form class="search-form header__search-form">
+        <input type="search-form__input">
+        <button type="search-form__button"></button>
+    </form>
+    <ul class="lang-switcher header__lang-switcher">
+        <li class="lang-item"><a class="lang-switcher__lang-link" href="url">en</a> </li>
+        <li class="lang-item"> <a class="lang-switcher__lang-link" href="url">ru</a> </li>
+    </ul>
+</header>
+```
